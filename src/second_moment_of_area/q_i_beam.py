@@ -1,4 +1,4 @@
-def q_i_beam(half_mid_height, mid_width, top_height, top_width):
+def q_pie_beam(half_mid_height, mid_width, top_height, top_width):
     mid_centroid = half_mid_height / 2
     top_centroid = half_mid_height + (top_height / 2)
     area_mid = half_mid_height * mid_width
