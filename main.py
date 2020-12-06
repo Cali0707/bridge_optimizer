@@ -1,17 +1,8 @@
-# This is a sample Python script.
+from src.find_combos_sum import sum_less_than_area
 
 
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+def main():
+    dimensions = sum_less_than_area(100, 813, 813*1016)
+    for dimension in dimensions:
+        for spacing in range(1, dimension[0] - 2):
+            calculate_failure_stress(dimension[0], dimension[1], spacing)

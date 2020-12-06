@@ -27,11 +27,12 @@ def sum_less_than_area(min_width, max_width, max_area):
 
     # return list of every (width, height) st. the sum of the areas formed by multiplying them by length is less than
     # the area of the matboard
-    return [p for p in product(widths, heights) if sum([p[0] * 2 * length, p[1] * 2 * length]) < max_area]
+    return [p for p in product(widths, heights) if sum([p[0] * 2 * length, p[1] * 2 * length,
+                                                        8 * p[0] * p[1]]) < max_area]
 
 
 if __name__ == '__main__':
-    l1 = find_combos_sum(10, 10, 2)
-    l2 = find_combos_sum(10, 10, 3)
-    print(l1)
-    print(l2)
+    # l1 = find_combos_sum(10, 10, 2)
+    # l2 = find_combos_sum(10, 10, 3)
+    l = sum_less_than_area(100, 813, 813*1016)
+    print(l)
