@@ -3,7 +3,7 @@ from math import pi
 
 def buckling(w_top, spacing, I, y, web_height, thickness):
     P = (140 * y) / I
-    denom = (12 * (1 - (0.1 ** 2)))
+    denom = (12 * (1 - (0.2 ** 2)))
     stress_a = ((16000 * (pi ** 2)) / denom) * ((thickness * 2/spacing)**2)
     b = (w_top - spacing) / 2
     # print(b)

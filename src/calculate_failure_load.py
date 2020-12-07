@@ -10,14 +10,14 @@ from src.shear_buckling import shear_buckling
 
 def calculate_failure_load(width, height, spacing, thickness):
     i = i_pie_beam(width, height, thickness)
-    q_cent, q_glue = q_pie_beam(height / 2, thickness * 2, thickness * 2, width)
+    q_cent, q_glue = q_pie_beam(height / 2, thickness * 2, thickness * 2, width, thickness, 20)
     y_bottom_or_top = (2 * thickness) + (height / 2)
     failure_ten = tensile_failure(i, y_bottom_or_top)
     failure_comp = compressive_failure(i, y_bottom_or_top)
     failure_matboard_shear = shear_matboard_failure(i, 2, thickness, q_cent)
-    failure_glue_shear = shear_glue_failure(i, 2, thickness, q_glue)
+    failure_glue_shear = shear_glue_failure(i, 2, 10, q_glue)
     failure_buckling = buckling(width, spacing, i, y_bottom_or_top, height, thickness)
-    failure_buckling_shear = shear_buckling(280, height, i, q_cent, thickness * 2)
+    failure_buckling_shear = shear_buckling(250, height, i, q_cent, thickness * 2)
     # print(width, height, spacing)
     # print('i:', i, 'q:', q_cent, 'y:', y_bottom_or_top)
     # print('tension:', failure_ten)
@@ -31,4 +31,6 @@ def calculate_failure_load(width, height, spacing, thickness):
 
 
 if __name__ == '__main__':
-    calculate_failure_load(158, 94, 58, 1.27)
+    calculate_failure_load(106, 110, 24, 1.27)
+    print('design 2:')
+    calculate_failure_load(134, 91, 55, 1.27)
