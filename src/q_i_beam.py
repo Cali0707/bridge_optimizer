@@ -5,6 +5,7 @@ def q_pie_beam(half_mid_height, mid_width, top_height, top_width, tab_height, ta
     area_glue_tab = tab_height * tab_width
     area_mid = half_mid_height * mid_width
     area_top = top_height * top_width
+    # Calculate Q from sum of area * distance to local centroid
     return (area_mid * mid_centroid) + (area_top * top_centroid) + (area_glue_tab * glue_tab_centroid), (area_top * top_centroid)
 
 
